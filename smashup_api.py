@@ -1,4 +1,4 @@
-import os.path
+import os
 import requests
 import json
 import re
@@ -134,8 +134,8 @@ if __name__ == '__main__':
 
     result_crashs = {"items": [{"color": "preto" if i["point"] < 2 else "verde", "value": i["point"]}
                                for i in sa.get_last_crashs(quantity=12)["items"]]}
-    print(json.dumps(result_crashs, indent=4))
+    print("CRASHS: ", json.dumps(result_crashs, indent=4))
 
     result_doubles = {"items": [{"color": i["color"], "value": i["number"]}
                                 for i in sa.get_last_doubles(quantity=12)["items"]]}
-    print(json.dumps(result_doubles, indent=4))
+    print("DOUBLES: ", json.dumps(result_doubles, indent=4))
